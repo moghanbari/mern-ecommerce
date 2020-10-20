@@ -1,2 +1,1 @@
-# mern-ecommerce
-A MERN-Stack ecommerce application
+## A MERN Stack Ecommerce web Application
