@@ -1,1 +1,1 @@
-## A MERN Stack Ecommerce web Application
+## A MERN Stack Ecommerce Web Application
