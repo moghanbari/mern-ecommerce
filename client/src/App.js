@@ -2,16 +2,17 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import Header from './components/layouts/Header'
 import Footer from './components/layouts/Footer'
+import HomeScreen from './screens/HomeScreen'
 
 const App = () => {
   return (
     <>
       <Header />
-      <Container>
-        <main className='py-3'>
-          <h2>Welcome to our shop</h2>
-        </main>
-      </Container>
+      <main className='py-3'>
+        <Container>
+          <HomeScreen />
+        </Container>
+      </main>
       <Footer />
     </>
   )
