@@ -6,7 +6,12 @@ export const addToCart = (productId, qty) => async (dispatch, getState) => {
 
   let product = {}
 
-  const productDetailsInState = state.productDetails
+  const productDetailsInState =
+    state.productDetails.product &&
+    state.productDetails.product._id &&
+    state.productDetails.product._id === productId
+      ? state.productDetails.product
+      : false
 
   if (productDetailsInState) {
     product = productDetailsInState
@@ -14,8 +19,6 @@ export const addToCart = (productId, qty) => async (dispatch, getState) => {
     const { data } = await axios.get(`/api/products/${productId}`)
     product = data
   }
-
-  const cart = state.cart
 
   dispatch({
     type: CART_ADD_ITEM,
@@ -29,5 +32,6 @@ export const addToCart = (productId, qty) => async (dispatch, getState) => {
     },
   })
 
+  const cart = state.cart
   localStorage.setItem('cartItem', JSON.stringify(cart.cartItems))
 }
